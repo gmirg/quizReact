@@ -76,20 +76,3 @@ body {
   margin-top: 5px;
   justify-content: center;
 }
-
-.correct {
-  background-color: #2f922f;
-}
-
-.incorrect {
-  background-color: #ff3333;
-}
-
-/* .answer-button:hover, .button:hover {
-  background-color: #3B61F5;
-  color: #fff;
-}
-
-.answer-button:focus, .button:focus  {
-  outline: none;
-} */
