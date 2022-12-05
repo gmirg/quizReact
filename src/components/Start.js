@@ -1,14 +1,14 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Reset from './Reset'
+
 const Start = () => {
     const [data, setData] = useState([]);
     const [answers, setAnswers] = useState([]);
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [score, setScore] = useState(0);
     const [showScore, setShowScore] = useState(false);
-    const [selectedAnswer, setSelectedAnswer] = useState(null);
     const inputElement = useRef();
-    const [start, setStart] = useState(false)
+    const [start, setStart] = useState(false);
     const Questions = () => {
         fetch('https://opentdb.com/api.php?amount=50&category=32&type=multiple')
             .then(res => res.json())
@@ -43,7 +43,7 @@ const Start = () => {
         }, duration);
     };
     const checkAnswer = (value, e) => {
-        setSelectedAnswer(e);
+        // setSelectedAnswer(e);
         if (value === data[currentQuestion].correct_answer) {
             setScore(score + 1);
             e.classList.add("correct")
@@ -61,15 +61,13 @@ const Start = () => {
         });
     }
     return (
-        <div className="App">
+
+        <div className="start">
             {data.length === 0 ? <div className='score-section'>
                 <img src='qmark.gif' alt='?' ></img>
             </div> :
                 showScore ? (
-                    <div className='score-section'>
-                        You scored {score} out of {data.length}
-                        <button className='button' onClick={() => restartGame()}>START AGAIN</button>
-                    </div>
+                   <Reset score = {score} data = {data} showScore = {showScore} currentQuestion ={currentQuestion} />
                 ) : (
                     <>
                         <div className='score-section'>You got {score} questions right</div>
