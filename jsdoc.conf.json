@@ -1,0 +1,17 @@
+{
+    "plugins": [],
+    "source": {
+        "include": ["src"], //Directorio/s con el código a generar documentación
+        "includePattern": ".js$", //Extensiones permitidas
+        "excludePattern": "(node_modules|docs)" //Exclusiones
+    },
+    "templates": {
+        "cleverLinks": false,
+        "monospaceLinks": false
+    },
+    "opts": {
+        "recurse": true, //Análisis recursivo de archivos (si importamos por ejemplo)
+        "destination": "./docs", //Directorio para almacenar la documentación
+        "template": ""
+    }
+}

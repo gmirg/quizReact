@@ -1,6 +1,13 @@
 import React, { useState, useEffect } from "react";
-// import {score, setScore, setCurrentQuestion, setShowScore, data} from "./Start";
 
+/**
+ * Componente que reinicia el juego
+ * @component
+ * @states data, answers, currentQuestion, score, showScore, start
+ * @ref inputElement
+ * @function restartGame recarga la pagina
+ *
+ */
 const Reset = (props) => {
     const [data, setData] = useState([]);
     const [score, setScore] = useState(0);
